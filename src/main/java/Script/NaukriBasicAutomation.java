@@ -18,10 +18,10 @@ public class NaukriBasicAutomation extends SeleniumSetup {
 		
         Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter Your Email id/Username : ");
+		System.out.println("Enter Your Naukri.com Email id/Username : ");
 		String Username = sc.nextLine();
 		
-		System.out.println("Enter Your Password : ");
+		System.out.println("Enter Your Naukri.com Password : ");
 		String Password = sc.nextLine();
 		
 		SeleniumSetup Sp = new SeleniumSetup();
