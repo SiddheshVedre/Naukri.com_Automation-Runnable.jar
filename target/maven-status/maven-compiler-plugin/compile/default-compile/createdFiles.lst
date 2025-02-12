@@ -1,0 +1,6 @@
+BasePackage\SeleniumSetup.class
+PagesAndAutomationWork\BasePageSetup.class
+PagesAndAutomationWork\HomePage.class
+Script\NaukriBasicAutomation.class
+PagesAndAutomationWork\LoginPage.class
+PagesAndAutomationWork\ProfilePage.class
