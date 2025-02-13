@@ -57,17 +57,86 @@ WebElement btnViewProfile;
 
 public void clickonProfile(){
 	
-	  try {
-	        System.out.println("Waiting for 'View Profile' button to be clickable...");
-	        waitForElementToBeClickable(btnViewProfile, 15);
-	        System.out.println("'View Profile' button is clickable. Performing click action.");
-	        btnViewProfile.click();
-	    } catch (TimeoutException e) {
-	        System.out.println("Failed to click 'View Profile' button: TimeoutException occurred.");
-	    }
+    try {
+        System.out.println("Starting the process to click on 'View Profile' button...");
+        
+        // Wait for 'View Profile' button to become clickable
+        waitForElementToBeClickable(btnViewProfile, 15);
+        System.out.println("'View Profile' button is clickable. Performing click action.");
+        
+        // Perform the click action
+        btnViewProfile.click();
+        
+        
+    } catch (TimeoutException e) {
+        
+        System.out.println(RedClr + "Error : Not Clickable" + NormalClr);
+    	
+    } catch (Exception e) {
+        
+        System.out.println(RedClr + "Error : Not Clickable" + NormalClr);
+    	
+    } 
+  }
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Handling Search Bar Opration <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	public void SearchBar(String designation,String jobLocationclick, String  experience) {
+		
+	try {
+		System.out.println("Starting the process to Search the Job Applications.....");
+		
+		// Wait for 'View Profile' button to become clickable
+        waitForElementToBeClickable(btnjobSearchBar, 15);
+        
+		btnjobSearchBar.click();
+		txtdesignation.sendKeys(designation);
+		btnexperience.click();
+		
+		
+		selectExperience(Integer.parseInt(experience));
+		
+		
+		txtjobLocationclick.sendKeys(jobLocationclick);
+		btnpopupSearch.click();	
+	   }catch (TimeoutException e) {
+	        
+	        System.out.println(RedClr + "Search Bar Error" +NormalClr);
+	    
+	    } catch (Exception e) {
+	        
+	        System.out.println(RedClr + "Search Bar Error" + NormalClr);
+	        
+	    } 
 	
- }
-
-
+	
+	}
+	
+	
+//  >>>>>>>>>>>>>>>>>>>>>>  Selecting Experience on Job Serach Bar  <<<<<<<<<<<<<<<<<<<<<<<<<
+	public void selectExperience(int index) {
+		
+	try {	
+		System.out.println("Starting the process of 'Selecting Experience on Dropdown'");
+		
+        // Check if the index is valid
+        if (index >= 0 && index < btntellExperience.size()) {
+            // Get the element from the list using the index and click it
+            WebElement liElement = btntellExperience.get(index);
+            liElement.click();
+            
+        } else {
+            System.out.println("Invalid index: " + index);
+        }
+	   } catch (TimeoutException e) {
+	        
+	        System.out.println(RedClr + "Dropdown : Experience Not Selected Perfectly" + NormalClr);
+	    	
+	    } catch (Exception e) {
+	        
+	        System.out.println(RedClr +"Dropdown : Experience Not Selected Perfectly" + NormalClr);
+	    	
+	    }  
+	}
 
 }

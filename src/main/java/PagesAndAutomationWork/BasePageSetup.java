@@ -15,6 +15,12 @@ public class BasePageSetup {
 // >>>>>>>>>>>>>>>>>>>>>>>>  Base Page Class Driver  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 WebDriver driver;
 
+//>>>>>>>>>>>>>>>>> Text Colours <<<<<<<<<<<<<<<<<
+public static String NormalClr = "\u001B[0m";
+public static String  GreenClr = "\u001B[32m";
+public static String  BlueClr = "\u001B[33m";
+public static String RedClr = "\u001B[31m";
+
 // >>>>>>>>>>>>>>>>>>>>>>>>  PageFactory Method With driver Cunstructor  <<<<<<<<<<<<<<<<<<<<<< 
 public BasePageSetup(WebDriver driver) throws IOException {
 	this.driver = driver;

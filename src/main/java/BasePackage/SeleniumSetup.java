@@ -12,6 +12,16 @@ public class SeleniumSetup {
 	
 	public static WebDriver driver;
 	
+	//>>>>>>>>>>>>>>>>> Text Colours <<<<<<<<<<<<<<<<<
+	public static String NormalClr = "\u001B[0m";
+	public static String  GreenClr = "\u001B[32m";
+	public static String  BlueClr = "\u001B[33m";
+	public static String RedClr = "\u001B[31m";
+			
+	
+	       
+	       
+	
 	public static void Selenium() {
 		
 		
@@ -39,5 +49,4 @@ public class SeleniumSetup {
       
 	}
 	
-
 }

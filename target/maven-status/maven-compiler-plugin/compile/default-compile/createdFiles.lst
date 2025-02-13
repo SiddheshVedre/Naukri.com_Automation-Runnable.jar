@@ -1,6 +1,8 @@
-BasePackage\SeleniumSetup.class
-PagesAndAutomationWork\BasePageSetup.class
 PagesAndAutomationWork\HomePage.class
-Script\NaukriBasicAutomation.class
+Script\NaukriJobApplications.class
+BasePackage\SeleniumSetup.class
+Script\NaukriDailyUpdate.class
+PagesAndAutomationWork\BasePageSetup.class
+Main\MainRunner.class
 PagesAndAutomationWork\LoginPage.class
 PagesAndAutomationWork\ProfilePage.class

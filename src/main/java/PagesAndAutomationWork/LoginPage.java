@@ -26,55 +26,62 @@ public class LoginPage extends BasePageSetup {
 		
 	@FindBy(xpath= "//button[@type='submit']")
 	WebElement btnPopupLoginButton;
+	
+	@FindBy(xpath= "//div[@class='server-err']")
+	WebElement ErrorMsgLogin;
 
 	
 
-	public void NaukriLogin(String username, String password) {
+	public void NaukriLogin(String username, String password) throws Exception {
 		
 
-		 try {
-		        System.out.println("Waiting for 'Login' button to be clickable...");
-		        waitForElementToBeClickable(btnLoginBtn, 15);
-		        System.out.println("'Login' button is clickable. Performing click action.");
-		        btnLoginBtn.click();
-		    } catch (TimeoutException e) {
-		        System.out.println("Failed to click 'Login' button: TimeoutException occurred.");
-		    }
-		 
+	    try {
+	        System.out.println("Starting login process...");
+	        waitForElementToBeClickable(btnLoginBtn, 15);
+	        btnLoginBtn.click();
 
-		 try {
-		        System.out.println("Waiting for 'Email id/ Username' TextField to be clickable...");
-		        waitForElementToBeClickable(txtEmailField, 15);
-		        System.out.println("'Email id/ Username' TextField is clickable. Performing click action.");
-		        txtEmailField.sendKeys(username);
-		    } catch (TimeoutException e) {
-		        System.out.println("Failed to click 'Email id/ Username' TextField: TimeoutException occurred.");
-		    }
-		 
+	        waitForElementToBeClickable(txtEmailField, 15);
+	        txtEmailField.sendKeys(username);
 
-		 try {
-		        System.out.println("Waiting for 'Password' TextField to be clickable...");
-		        waitForElementToBeClickable(txtPasswordField, 15);
-		        System.out.println("'Password' TextField is clickable. Performing click action.");
-		        txtPasswordField.sendKeys(password);
-		    } catch (TimeoutException e) {
-		        System.out.println("Failed to click 'Password' TextField: TimeoutException occurred.");
-		    }
-		 
+	        waitForElementToBeClickable(txtPasswordField, 15);
+	        txtPasswordField.sendKeys(password);
 
-		 try {
-		        System.out.println("Waiting for 'Login Submit' button to be clickable...");
-		        waitForElementToBeClickable(btnPopupLoginButton, 15);
-		        System.out.println("'icon edit' button is clickable. Performing click action.");
-		        btnPopupLoginButton.click();
-		    } catch (TimeoutException e) {
-		        System.out.println("Failed to click 'Login Submit' button: TimeoutException occurred.");
-		    }
-	
-		
-		
+	        waitForElementToBeClickable(btnPopupLoginButton, 15);
+	        btnPopupLoginButton.click();
+	        
+	        // Check if the error message element is visible and contains the expected text
+	        if (ErrorMsgLogin.isDisplayed()) {
+	            String errorMessage = ErrorMsgLogin.getText();
+	            if (errorMessage.contains("Invalid details. Please check the Email ID - Password combination.")) {
+	                System.err.println(RedClr + "Login Error: " + errorMessage + NormalClr);
+	                throw new Exception("Login failed due to invalid credentials.");
+	            }
+	        }
+	        
+	        System.out.println("Login successful.");
+
+	        
+	    } catch (TimeoutException e) {
+	        
+	        System.out.println(RedClr + "Login Error : Username or Password Missmatch" + NormalClr);
+	        throw e;
+
+
+	    } catch (Exception e) {
+	        
+	        System.out.println(RedClr + "Login Error : Username or Password Missmatch" + NormalClr);
+	        throw e;
+	        
+	    } finally {
+	        if (driver != null) {
+	            driver.quit();
+	            System.out.println("Browser closed after login attempt.");
+	        }
 	 }
-
+	    
+	    
+	    
+  }
 }
 
 

@@ -46,7 +46,7 @@
                             <!-- Ensure proper main class -->
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>Script.NaukriBasicAutomation</mainClass> <!-- Update with your main class -->
+                                    <mainClass>Main.MainRunner</mainClass> <!-- Update with your main class -->
                                 </transformer>
                             </transformers>
                             <!-- Optional: Exclude signature files to prevent errors -->
