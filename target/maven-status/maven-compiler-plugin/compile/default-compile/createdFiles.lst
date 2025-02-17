@@ -4,5 +4,7 @@ BasePackage\SeleniumSetup.class
 Script\NaukriDailyUpdate.class
 PagesAndAutomationWork\BasePageSetup.class
 Main\MainRunner.class
+PagesAndAutomationWork\JobSubmitingPage.class
 PagesAndAutomationWork\LoginPage.class
 PagesAndAutomationWork\ProfilePage.class
+Script\NaukriResumeUplodeDaily.class

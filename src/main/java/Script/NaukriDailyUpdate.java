@@ -1,44 +1,32 @@
 package Script;
 
-import java.util.Scanner;
+
 
 import BasePackage.SeleniumSetup;
 import PagesAndAutomationWork.HomePage;
-import PagesAndAutomationWork.LoginPage;
 import PagesAndAutomationWork.ProfilePage;
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
+
 
 
 
 public class NaukriDailyUpdate extends SeleniumSetup {
 	
+	public void NaukriProfileUpdate() throws Exception {
 
-	
-
-	public void NaukriProfileUpdate(String username, String password) throws Exception {
-
+		//--------------------------------------------------------------------------------------------//
+	     // Pages Structure 
 		
-
-
-	
-		SeleniumSetup Sp = new SeleniumSetup();
-		Sp.Selenium();
-		
-	//Classes Added here
-		LoginPage Lp = new LoginPage(driver);
 		HomePage Hp = new HomePage(driver);
 		ProfilePage Pp = new ProfilePage(driver);
 		
-   //Steps For Automate Profile Update
-		Lp.NaukriLogin(username, password);
-		System.out.println("Login successful.");
+		//--------------------------------------------------------------------------------------------//
+         //Steps For Automate: Profile Update
 		
 		Hp.clickonProfile();
-		System.out.println("'View Profile' button clicked successfully.");
-		
+		System.out.println(CyanClr + "'View Profile' button clicked successfully." + NormalClr);
 		
 		Pp.UpdateProfile();
-		System.out.println(GreenClr + "Profile updated successfully." + NormalClr);
+		System.out.println(CyanClr + "Profile updated successfully." + NormalClr);
 	 	  
 	    
 	

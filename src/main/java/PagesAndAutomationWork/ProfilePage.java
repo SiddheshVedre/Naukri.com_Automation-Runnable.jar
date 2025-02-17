@@ -12,21 +12,28 @@ import org.openqa.selenium.support.FindBy;
 public class ProfilePage extends BasePageSetup {
 	
 	
+	//--------------------------------------------------------------------------------------------//
+    //BasePageSetup PageFactory
 	
 	public ProfilePage(WebDriver driver) throws IOException {
 		super(driver);
 	}
 	
+	//--------------------------------------------------------------------------------------------//
+    //Elements Locatores
 	
-@FindBy(xpath = "//*[@Class='icon edit ']")
-WebElement btnEditIcaon;
+	@FindBy(xpath = "//*[@Class='icon edit ']")
+	WebElement btnEditIcaon;
 
-@FindBy(xpath = "//*[text()='Save']")
-WebElement btnSave;
-
-
+	@FindBy(xpath = "//*[text()='Save']")
+	WebElement btnSave;
 
 
+
+	//--------------------------------------------------------------------------------------------//
+	//All Page Level Oprations
+	
+   // >>>>>>>>>>> ProfilePage : Update Profile Setup <<<<<<<<<<<<<<<<<<
 	public void UpdateProfile() {
 		
 		try {
@@ -55,9 +62,10 @@ WebElement btnSave;
 	        System.out.println(RedClr + "Error : Profile Not Updated Properly" + NormalClr);
 	    	return;
 	    } 
-		 
-		 
-		
 		
 	}
+	
+	
+	
+	
 }
